@@ -2,12 +2,12 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Button } from '../ui/button'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { IoIosArrowDown } from 'react-icons/io'
 import { mainMenuItems } from '@/lib/dummyData'
 import { IMenuItems } from '@/types/interfaces'
 import MenuSections from './MenuSections'
+import { Button } from '@/components/ui/button'
 
 export default function TopBar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -30,8 +30,8 @@ export default function TopBar() {
 
   return (
     <>
-      <div className="bg-white">
-        <nav className="flex justify-between items-center w-[92%] mx-auto">
+      <nav className="w-full sticky top-0 z-50 bg-white">
+        <div className="flex justify-between items-center md:px-[10%] sm:px-[5%]">
           <div>
             <img
               className="w-16 cursor-pointer"
@@ -40,7 +40,7 @@ export default function TopBar() {
             />
           </div>
           <div
-            className={`nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 ${menuOpen ? 'top-[9%]' : 'top-[-100%]'} md:w-auto w-full flex items-center px-5`}
+            className={`nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 ${menuOpen ? 'top-[9%]' : 'top-[-100%]'} md:w-auto w-full flex items-center px-5`}
           >
             <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
               {mainMenuItems.map((item: IMenuItems) => (
@@ -71,13 +71,14 @@ export default function TopBar() {
               />
             )}
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
 
       {/* Submenu Section */}
       <div
-        className={`transition-transform duration-300 ease-in-out bg-white mt-5 md:w-[70%] sm:w-[90%] m-auto p-10 rounded-lg z-50 ${hoveredMenuId ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        className={`transition-transform duration-300 bg-white ease-in-out fixed left-0 right-0 w-full mt-2 md:w-[70%] sm:w-[90%] mx-auto p-10 rounded-lg z-50 ${hoveredMenuId ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         style={{
+          top: '70px', // Adjust this value based on the height of your navbar
           transform: `translateY(${hoveredMenuId ? '0' : '-10px'})`,
           boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
         }}
@@ -88,7 +89,7 @@ export default function TopBar() {
             .filter(
               item => item.id === hoveredMenuId && item.sections.length > 0,
             )
-            .map((item) => <MenuSections item={item} />)}
+            .map(item => <MenuSections key={item.id} item={item} />)}
       </div>
     </>
   )

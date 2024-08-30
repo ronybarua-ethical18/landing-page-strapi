@@ -1,3 +1,8 @@
+import WebIcon from '../../public/web.png'
+import SeoIcon from '../../public/seo.png'
+import VRIcon from '../../public/vr.png'
+import MobileIcon from '../../public/mobile.png'
+
 export const mainMenuItems = [
   {
     id: 1,
@@ -161,5 +166,32 @@ export const mainMenuItems = [
     id: 5,
     title: 'Contact Us',
     sections: [],
+  },
+]
+
+export const services = [
+  {
+    id: 1,
+    title: 'Web Application',
+    description: 'Lorem ipsum is simply',
+    icon: WebIcon,
+  },
+  {
+    id: 2,
+    title: 'SEO',
+    description: 'Lorem ipsum is simply',
+    icon: SeoIcon,
+  },
+  {
+    id: 3,
+    title: 'AR/VR Solutions',
+    description: 'Lorem ipsum is simply',
+    icon: VRIcon,
+  },
+  {
+    id: 4,
+    title: 'Mobile Applications',
+    description: 'Lorem ipsum is simply',
+    icon: MobileIcon,
   },
 ]

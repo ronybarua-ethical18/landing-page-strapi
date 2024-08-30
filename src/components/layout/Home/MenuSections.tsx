@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import linkICon from '../../../public/pie.png'
+import linkICon from '../../../../public/pie.png'
 
 function MenuSections({ item }: any) {
   return (
