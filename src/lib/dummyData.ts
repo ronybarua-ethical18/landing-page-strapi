@@ -2,6 +2,10 @@ import WebIcon from '../../public/web.png'
 import SeoIcon from '../../public/seo.png'
 import VRIcon from '../../public/vr.png'
 import MobileIcon from '../../public/mobile.png'
+import LogoOne from '../../public/caspio.png'
+import LogoTwo from '../../public/beneoshop.png'
+import LogoThree from '../../public/HyperGrid.png'
+import LogoFour from '../../public/leotrippi.png'
 
 export const mainMenuItems = [
   {
@@ -193,5 +197,28 @@ export const services = [
     title: 'Mobile Applications',
     description: 'Lorem ipsum is simply',
     icon: MobileIcon,
+  },
+]
+
+export const logos = [
+  {
+    id: 1,
+    img: LogoOne,
+  },
+  {
+    id: 2,
+    img: LogoTwo,
+  },
+  {
+    id: 3,
+    img: LogoThree,
+  },
+  {
+    id: 4,
+    img: LogoFour,
+  },
+  {
+    id: 5,
+    img: LogoThree,
   },
 ]

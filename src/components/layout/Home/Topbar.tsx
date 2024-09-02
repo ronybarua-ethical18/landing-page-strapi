@@ -30,7 +30,7 @@ export default function TopBar() {
 
   return (
     <>
-      <nav className="w-full sticky top-0 z-50 bg-white">
+      <nav className="w-full sticky top-0 bg-white" style={{zIndex:9999}}>
         <div className="flex justify-between items-center md:px-[10%] sm:px-[5%]">
           <div>
             <img
@@ -76,11 +76,12 @@ export default function TopBar() {
 
       {/* Submenu Section */}
       <div
-        className={`transition-transform duration-300 bg-white ease-in-out fixed left-0 right-0 w-full mt-2 md:w-[70%] sm:w-[90%] mx-auto p-10 rounded-lg z-50 ${hoveredMenuId ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        className={`transition-transform duration-300 bg-white ease-in-out fixed left-0 right-0 w-full mt-2 md:w-[70%] sm:w-[90%] mx-auto p-10 rounded-lg ${hoveredMenuId ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         style={{
           top: '70px', // Adjust this value based on the height of your navbar
           transform: `translateY(${hoveredMenuId ? '0' : '-10px'})`,
           boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
+          zIndex:9999
         }}
         onMouseLeave={handleMouseLeave}
       >
