@@ -1,7 +1,11 @@
 import WebIcon from '../../public/web.png'
+import Web2Icon from '../../public/apps.png'
 import SeoIcon from '../../public/seo.png'
+import SeoAboutIcon from '../../public/seoAbout.png'
 import VRIcon from '../../public/vr.png'
+import ARVRIcon from '../../public/arvr.png'
 import MobileIcon from '../../public/mobile.png'
+import MobileAboutIcon from '../../public/mobileAbout.png'
 import LogoOne from '../../public/caspio.png'
 import LogoTwo from '../../public/beneoshop.png'
 import LogoThree from '../../public/HyperGrid.png'
@@ -159,15 +163,23 @@ export const mainMenuItems = [
     id: 3,
     title: 'Services',
     sections: [],
+    link: '/services',
   },
 
   {
     id: 4,
     title: 'About Us',
     sections: [],
+    link: '/about',
   },
   {
     id: 5,
+    title: 'Blog',
+    sections: [],
+    link: '/blog',
+  },
+  {
+    id: 6,
     title: 'Contact Us',
     sections: [],
   },
@@ -197,6 +209,33 @@ export const services = [
     title: 'Mobile Applications',
     description: 'Lorem ipsum is simply',
     icon: MobileIcon,
+  },
+]
+
+export const aboutServices = [
+  {
+    id: 1,
+    title: 'Web Application',
+    description: 'Lorem ipsum is simply',
+    icon: Web2Icon,
+  },
+  {
+    id: 2,
+    title: 'SEO',
+    description: 'Lorem ipsum is simply',
+    icon: SeoAboutIcon,
+  },
+  {
+    id: 3,
+    title: 'Mobile Applications ',
+    description: 'Lorem ipsum is simply',
+    icon: MobileAboutIcon,
+  },
+  {
+    id: 4,
+    title: 'AR/VR Solutions',
+    description: 'Lorem ipsum is simply',
+    icon: ARVRIcon,
   },
 ]
 

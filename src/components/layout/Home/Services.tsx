@@ -3,23 +3,25 @@ import Image from 'next/image'
 import React from 'react'
 import { Separator } from '@/components/ui/separator'
 
-function Services() {
-  const IconWithBG = (id: number, icon: any) => {
-    const bgColor =
-      id === 1
-        ? 'bg-[#efeaff]'
-        : id === 2
-          ? 'bg-[#ecffda]'
-          : id === 3
-            ? 'bg-[#dae6ff]'
-            : 'bg-[#f8dfd4]'
+const IconWithBG = (id: number, icon: any) => {
+  const bgColor =
+    id === 1
+      ? 'bg-[#efeaff]'
+      : id === 2
+        ? 'bg-[#ecffda]'
+        : id === 3
+          ? 'bg-[#dae6ff]'
+          : 'bg-[#f8dfd4]'
 
-    return (
-      <div className={`rounded-2xl p-4  ${bgColor}`}>
-        <Image src={icon} alt="icon" />
-      </div>
-    )
-  }
+  return (
+    <div className={`rounded-2xl p-4  ${bgColor}`}>
+      <Image src={icon} alt="icon" />
+    </div>
+  )
+}
+
+function Services() {
+  
 
   return (
     <div>

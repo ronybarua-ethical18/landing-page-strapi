@@ -33,11 +33,12 @@ export default function TopBar() {
       <nav className="w-full sticky top-0 bg-white" style={{zIndex:9999}}>
         <div className="flex justify-between items-center md:px-[10%] sm:px-[5%]">
           <div>
-            <img
+            {/* <img
               className="w-16 cursor-pointer"
               src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png"
               alt="Logo"
-            />
+            /> */}
+            <h1 className='font-bold text-2xl my-4'><span className='text-[#1090CB]'>Next</span>Strapi</h1>
           </div>
           <div
             className={`nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 ${menuOpen ? 'top-[9%]' : 'top-[-100%]'} md:w-auto w-full flex items-center px-5`}
@@ -49,7 +50,7 @@ export default function TopBar() {
                   key={item.id}
                   onMouseEnter={() => handleMouseEnter(item.id)}
                 >
-                  <Link href="/" className="hover:text-[#4b47ff]">
+                  <Link href={item.link ? item.link:"/"} className="hover:text-[#4b47ff]">
                     {item.title}
                   </Link>
                   {item.sections.length > 0 && <IoIosArrowDown />}

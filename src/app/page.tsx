@@ -1,6 +1,7 @@
 import ContactEmail from '@/components/layout/Home/ContactEmail'
 import FeatureCategories from '@/components/layout/Home/FeatureCategories'
 import Features from '@/components/layout/Home/Features'
+import Footer from '@/components/layout/Home/Footer'
 import Hero from '@/components/layout/Home/Hero'
 import Services from '@/components/layout/Home/Services'
 import TopBar from '@/components/layout/Home/Topbar'
@@ -20,6 +21,7 @@ export default function Home() {
         </div>
         <TrustedCompanies />
         <ContactEmail />
+        <Footer />
       </div>
     </main>
   )
