@@ -1,11 +1,11 @@
-import ContactEmail from '@/components/layout/Home/ContactEmail'
-import FeatureCategories from '@/components/layout/Home/FeatureCategories'
-import Features from '@/components/layout/Home/Features'
-import Footer from '@/components/layout/Home/Footer'
-import Hero from '@/components/layout/Home/Hero'
-import Services from '@/components/layout/Home/Services'
-import TopBar from '@/components/layout/Home/Topbar'
-import { TrustedCompanies } from '@/components/layout/Home/TrustedCompanies'
+import ContactEmail from '@/components/layout/home/ContactEmail'
+import FeatureCategories from '@/components/layout/home/FeatureCategories'
+import Features from '@/components/layout/home/Features'
+import Footer from '@/components/layout/home/Footer'
+import Hero from '@/components/layout/home/Hero'
+import Services from '@/components/layout/home/Services'
+import TopBar from '@/components/layout/home/Topbar'
+import { TrustedCompanies } from '@/components/layout/home/TrustedCompanies'
 
 export default function Home() {
   return (

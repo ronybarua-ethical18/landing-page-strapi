@@ -1,9 +1,10 @@
-import Description from '@/components/layout/AboutUs/Description'
-import Heading from '@/components/layout/AboutUs/Heading'
-import ServicesWithTitle from '@/components/layout/AboutUs/ServicesWithTitle'
-import ContactEmail from '@/components/layout/Home/ContactEmail'
-import Footer from '@/components/layout/Home/Footer'
-import TopBar from '@/components/layout/Home/Topbar'
+import Description from '@/components/layout/about/Description'
+import Heading from '@/components/layout/about/Heading'
+import ServicesWithTitle from '@/components/layout/about/ServicesWithTitle'
+import { Teams } from '@/components/layout/about/Teams'
+import ContactEmail from '@/components/layout/home/ContactEmail'
+import Footer from '@/components/layout/home/Footer'
+import TopBar from '@/components/layout/home/Topbar'
 import React from 'react'
 
 function AboutPage() {
@@ -14,6 +15,7 @@ function AboutPage() {
       <Heading />
       <Description />
       <ServicesWithTitle />
+      <Teams />
       <ContactEmail />
       <Footer />
     </div>

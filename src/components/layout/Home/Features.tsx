@@ -7,7 +7,6 @@ import Mobile from '../../../../public/mobilefull.png'
 import MobileMock from '../../../../public/mobileMock.png'
 import VRMen from '../../../../public/vrmen.png'
 import BallWithContent from './BallWithContent'
-import FeatureCategories from './FeatureCategories'
 
 function Features() {
   return (

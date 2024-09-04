@@ -6,8 +6,8 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 import { IoIosArrowDown } from 'react-icons/io'
 import { mainMenuItems } from '@/lib/dummyData'
 import { IMenuItems } from '@/types/interfaces'
-import MenuSections from './MenuSections'
 import { Button } from '@/components/ui/button'
+import MenuSections from './MenuSections'
 
 export default function TopBar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -30,7 +30,7 @@ export default function TopBar() {
 
   return (
     <>
-      <nav className="w-full sticky top-0 bg-white" style={{zIndex:9999}}>
+      <nav className="w-full sticky top-0 bg-white" style={{ zIndex: 9999 }}>
         <div className="flex justify-between items-center md:px-[10%] sm:px-[5%]">
           <div>
             {/* <img
@@ -38,7 +38,11 @@ export default function TopBar() {
               src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png"
               alt="Logo"
             /> */}
-            <h1 className='font-bold text-2xl my-4'><span className='text-[#1090CB]'>Next</span>Strapi</h1>
+            <Link href={'/'} className="hover:text-[#4b47ff]">
+              <h1 className="font-bold text-2xl my-4">
+                <span className="text-[#1090CB]">Next</span>Strapi
+              </h1>
+            </Link>
           </div>
           <div
             className={`nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 ${menuOpen ? 'top-[9%]' : 'top-[-100%]'} md:w-auto w-full flex items-center px-5`}
@@ -50,7 +54,10 @@ export default function TopBar() {
                   key={item.id}
                   onMouseEnter={() => handleMouseEnter(item.id)}
                 >
-                  <Link href={item.link ? item.link:"/"} className="hover:text-[#4b47ff]">
+                  <Link
+                    href={item.link ? item.link : '/'}
+                    className="hover:text-[#4b47ff]"
+                  >
                     {item.title}
                   </Link>
                   {item.sections.length > 0 && <IoIosArrowDown />}
@@ -82,7 +89,7 @@ export default function TopBar() {
           top: '70px', // Adjust this value based on the height of your navbar
           transform: `translateY(${hoveredMenuId ? '0' : '-10px'})`,
           boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
-          zIndex:9999
+          zIndex: 9999,
         }}
         onMouseLeave={handleMouseLeave}
       >

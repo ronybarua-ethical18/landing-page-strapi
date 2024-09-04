@@ -10,6 +10,15 @@ import LogoOne from '../../public/caspio.png'
 import LogoTwo from '../../public/beneoshop.png'
 import LogoThree from '../../public/HyperGrid.png'
 import LogoFour from '../../public/leotrippi.png'
+import TeamOne from '../../public/team1.png'
+import TeamTwo from '../../public/team2.png'
+import TeamThree from '../../public/team3.png'
+import TeamFive from '../../public/team5.png'
+import ProjectOne from '../../public/project1.png'
+import ProjectTwo from '../../public/project2.png'
+import ProjectThree from '../../public/project3.png'
+import ProjectFour from '../../public/project4.png'
+import ProjectFive from '../../public/project5.png'
 
 export const mainMenuItems = [
   {
@@ -218,24 +227,61 @@ export const aboutServices = [
     title: 'Web Application',
     description: 'Lorem ipsum is simply',
     icon: Web2Icon,
+    serviceDesc:
+      'Platform independant business solutions for maximum availability',
   },
   {
     id: 2,
     title: 'SEO',
     description: 'Lorem ipsum is simply',
     icon: SeoAboutIcon,
+    serviceDesc: 'Let the world find you on top of others',
   },
   {
     id: 3,
     title: 'Mobile Applications ',
     description: 'Lorem ipsum is simply',
     icon: MobileAboutIcon,
+    serviceDesc: 'The simplest but robust technology to accompany with you',
   },
   {
     id: 4,
     title: 'AR/VR Solutions',
     description: 'Lorem ipsum is simply',
     icon: ARVRIcon,
+    serviceTitle: 'Advanced autonomous technologies to make life simple',
+  },
+]
+export const servicesWithDesc = [
+  {
+    id: 1,
+    title: 'Mobile Applications ',
+    description: 'Lorem ipsum is simply',
+    icon: MobileAboutIcon,
+    serviceDesc: 'The simplest but robust technology to accompany with you',
+  },
+  {
+    id: 2,
+    title: 'Web Application',
+    description: 'Lorem ipsum is simply',
+    icon: Web2Icon,
+    serviceDesc:
+      'Platform independant business solutions for maximum availability',
+  },
+  {
+    id: 3,
+    title: 'SEO',
+    description: 'Lorem ipsum is simply',
+    icon: SeoAboutIcon,
+    serviceDesc: 'Let the world find you on top of others',
+  },
+
+  {
+    id: 4,
+    title: 'AR/VR Solutions',
+    description: 'Lorem ipsum is simply',
+    icon: ARVRIcon,
+    serviceDesc: 'Advanced autonomous technologies to make life simple',
   },
 ]
 
@@ -259,5 +305,70 @@ export const logos = [
   {
     id: 5,
     img: LogoThree,
+  },
+]
+export const teams = [
+  {
+    id: 1,
+    designation: 'CEO',
+    img: TeamOne,
+    name: 'John kabras',
+  },
+  {
+    id: 2,
+    designation: 'COO',
+    img: TeamTwo,
+    name: 'Philips shene moris',
+  },
+  {
+    id: 3,
+    designation: 'Tech Lead',
+    img: TeamThree,
+    name: 'Equarn shamir mohomad',
+  },
+  {
+    id: 4,
+    designation: 'Head of UX',
+    img: TeamOne,
+    name: 'Janka indrajith',
+  },
+  {
+    id: 5,
+    designation: 'Head of UX',
+    img: TeamFive,
+    name: 'Lou Bartels',
+  },
+]
+
+export const projects = [
+  {
+    id: 1,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectOne,
+  },
+  {
+    id: 2,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectTwo,
+  },
+  {
+    id: 3,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectThree,
+  },
+  {
+    id: 4,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectFour,
+  },
+  {
+    id: 5,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectFive,
   },
 ]
