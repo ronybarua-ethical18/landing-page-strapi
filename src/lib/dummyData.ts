@@ -19,6 +19,7 @@ import ProjectTwo from '../../public/project2.png'
 import ProjectThree from '../../public/project3.png'
 import ProjectFour from '../../public/project4.png'
 import ProjectFive from '../../public/project5.png'
+import BlogOne from '../../public/blog1.png'
 
 export const mainMenuItems = [
   {
@@ -370,5 +371,43 @@ export const projects = [
     title: 'Lorem Ipsum is simply dummy text of the printing.',
     desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
     img: ProjectFive,
+  },
+]
+export const blogs = [
+  {
+    id: 1,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: BlogOne,
+  },
+  {
+    id: 2,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectFive,
+  },
+  {
+    id: 3,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectFour,
+  },
+  {
+    id: 4,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectFour,
+  },
+  {
+    id: 5,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectFive,
+  },
+  {
+    id: 6,
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
+    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    img: ProjectFour,
   },
 ]
