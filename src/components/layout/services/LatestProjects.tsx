@@ -36,7 +36,7 @@ function LatestProjects() {
                 <Image src={item.img} alt="logo" />
               </div>
               <div className="text-left ml-5 mt-5">
-                <h2 className="font-semibold ">{item.title}</h2>
+                <h2 className="font-semibold text-xl">{item.title}</h2>
                 <h1 className="font-light mt-5">{item.desc}</h1>
               </div>
             </CarouselItem>

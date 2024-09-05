@@ -66,7 +66,15 @@ export default function TopBar() {
             </ul>
           </div>
           <div className="flex items-center gap-6">
-            <Button variant="outline">Sign in</Button>
+            <Link href={'/contact'}>
+              <Button
+                variant="blue"
+                className="hover:bg-[#1090CB] hover:text-white"
+              >
+                Contact us
+              </Button>
+            </Link>
+
             {menuOpen ? (
               <FaTimes
                 onClick={handleToggleMenu}

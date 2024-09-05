@@ -188,11 +188,6 @@ export const mainMenuItems = [
     sections: [],
     link: '/blog',
   },
-  {
-    id: 6,
-    title: 'Contact Us',
-    sections: [],
-  },
 ]
 
 export const services = [
