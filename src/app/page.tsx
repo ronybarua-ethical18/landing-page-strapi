@@ -6,12 +6,21 @@ import Hero from '@/components/layout/home/Hero'
 import Services from '@/components/layout/home/Services'
 import TopBar from '@/components/layout/home/Topbar'
 import { TrustedCompanies } from '@/components/layout/home/TrustedCompanies'
+import { getStrapiData } from '@/lib/utils'
 
-export default function Home() {
+export default async function Home() {
+  const [mainMenuData, landingPageContent] = await getStrapiData([
+    "/api/main-menu",
+    "/api/landing-page"
+  ]) as [any, any, any]
+
+  const strapiMenuData = mainMenuData?.data?.attributes
+  console.log('another data', landingPageContent?.data?.attributes)
+
   return (
     <main className="w-full grid place-items-center">
       <div className="max-w-[2100px]">
-        <TopBar />
+        <TopBar strapiMenuData={strapiMenuData}/>
         <Hero />
         <Services />
         <Features />
