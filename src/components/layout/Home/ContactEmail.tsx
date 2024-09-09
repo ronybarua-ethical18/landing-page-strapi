@@ -5,7 +5,7 @@ import Pie from "../../../../public/pie.png"
 import Star from "../../../../public/star.png"
 import Image from 'next/image'
 
-function ContactEmail() {
+function ContactEmail({data}:any) {
   return (
     <div className="bg-[#e7f3f9] py-24 text-center relative">
       <h1 className="text-3xl font-semibold leading-relaxed">

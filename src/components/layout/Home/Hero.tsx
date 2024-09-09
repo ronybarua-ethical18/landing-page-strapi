@@ -10,18 +10,45 @@ import SuccelentAngle from '../../../../public/SuccelentAngle.png'
 import Cuboid from '../../../../public/Cuboid.png'
 import Image from 'next/image'
 
-function Hero() {
+function Hero({ data }: any) {
   return (
     <div className="relative bg-[#e7f4fa] z-0">
       {/* Ellipse Background */}
       <div className="absolute left-0 top-1/2 transform -translate-y-1/2  z-10">
-        <Image src={LeftEllipse} alt="left-ellipse" layout="intrinsic" />
+        <Image
+          src={
+            `http://localhost:1337${data?.contentLeftIcon?.data.attributes.url}` ||
+            LeftEllipse
+          }
+          alt={`left ellipse icon`}
+          width={data?.contentLeftIcon?.data.attributes.width}
+          height={data?.contentLeftIcon?.data.attributes.height}
+          layout="intrinsic"
+        />
       </div>
       <div className="absolute left-0 bottom-[-150px]  z-10">
-        <Image src={HeroVector} alt="left-ellipse" layout="intrinsic" />
+        <Image
+          src={
+            `http://localhost:1337${data?.bottomLeftIcon?.data.attributes.url}` ||
+            HeroVector
+          }
+          alt="left-ellipse"
+          layout="intrinsic"
+          width={data?.bottomLeftIcon?.data.attributes.width}
+          height={data?.bottomLeftIcon?.data.attributes.height}
+        />
       </div>
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
-        <Image src={HeroRight} alt="left-ellipse" layout="intrinsic" />
+        <Image
+          src={
+            `http://localhost:1337${data?.topRightIcon?.data.attributes.url}` ||
+            HeroVector
+          }
+          alt="left-ellipse"
+          layout="intrinsic"
+          width={data?.topRightIcon?.data.attributes.width}
+          height={data?.topRightIcon?.data.attributes.height}
+        />
       </div>
 
       {/* Content */}
@@ -29,44 +56,82 @@ function Hero() {
         <div className="flex items-center">
           <div className="relative">
             <h1 className="text-5xl font-semibold leading-snug">
-              Experienced{' '}
-              <span className="text-[#1090CB]">mobile and web </span>
-              applications and website builders measuring.
+              {data?.title}
             </h1>
             <p className="text-[#5C5C5C] leading-loose my-8">
-              KODEX TECHNOLOGY (PVT) LTD is a team of experienced mobile and web
-              applications and website builders measuring dozens of completed
-              projects. We build and develop mobile applications for several top
-              platforms, including Android & IOS.{' '}
+              {data?.description}
             </p>
             <div className="flex gap-4">
-              <Button variant="blue" size="lg">
-                Contact Us
-              </Button>
-              <Button variant="white" size="lg">
-                View More
-              </Button>
+              {data?.button?.map((btn: any) => (
+                <Button variant={btn?.type} size="lg">
+                  {btn.title}
+                </Button>
+              ))}
             </div>
           </div>
         </div>
         <div className="flex items-center justify-center relative">
           <div className="absolute right-8 top-1/3 transform -translate-y-1/2 opacity-70  z-10">
-            <Image src={HeroEllipse} alt="vector user image" />
+            <Image
+              src={
+                `http://localhost:1337${data?.heroBgEllipse?.data.attributes.url}` ||
+                HeroEllipse
+              }
+              alt="vector user image"
+              className="z-50"
+              width={data?.heroBgEllipse?.data.attributes.width}
+              height={data?.heroBgEllipse?.data.attributes.height}
+              layout="intrinsic"
+            />
           </div>
           <div className="">
-            <Image src={HeroUser} alt="vector user image" className="z-50" />
+            <Image
+              src={
+                `http://localhost:1337${data?.heroIcon?.data.attributes.url}` ||
+                HeroUser
+              }
+              alt="vector user image"
+              style={{ zIndex: 9999 }}
+              width={data?.heroIcon?.data.attributes.width}
+              height={data?.heroIcon?.data.attributes.height}
+              layout="intrinsic"
+            />
             <div className="absolute bottom-12 md:right-6 sm:right-0">
-              <Image src={HeroPlant} alt="vector user image" className="z-50" />
+              <Image
+                src={
+                  `http://localhost:1337${data?.heroBottomIcon?.data.attributes.url}` ||
+                  HeroPlant
+                }
+                alt="vector user image"
+                className="z-50"
+                width={data?.heroBottomIcon?.data.attributes.width}
+                height={data?.heroBottomIcon?.data.attributes.height}
+                layout="intrinsic"
+              />
             </div>
             <div className="absolute md:left-1/4 top-1/3 sm:left-0">
               <Image
-                src={SuccelentAngle}
-                alt="vector user image"
-                className="z-50"
+                src={
+                  `http://localhost:1337${data?.heroLeftIcon?.data.attributes.url}` ||
+                  SuccelentAngle
+                }
+                alt="Hero left icon"
+                layout="intrinsic"
+                width={data?.heroLeftIcon?.data.attributes.width}
+                height={data?.heroLeftIcon?.data.attributes.height}
               />
             </div>
             <div className="absolute lg:right-10 top-1/4 sm:right-0">
-              <Image src={Cuboid} alt="vector user image" className="z-50" />
+              <Image
+                src={
+                  `http://localhost:1337${data?.heroRightIcon?.data.attributes.url}` ||
+                  HeroRight
+                }
+                alt="Hero right icon"
+                layout="intrinsic"
+                width={data?.heroRightIcon?.data.attributes.width}
+                height={data?.heroRightIcon?.data.attributes.height}
+              />
             </div>
           </div>
         </div>

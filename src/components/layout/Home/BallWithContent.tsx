@@ -2,12 +2,12 @@ import Image from 'next/image'
 import React from 'react'
 import Happy from '../../../../public/happy.png'
 
-function BallWithContent({ position }: { position: string }) {
+function BallWithContent({ type }: { type: string }) {
   return (
     <div>
       <div className="flex gap-6 items-center">
         <div
-          className={`rounded-full p-3 ${position === 'top' ? 'bg-[#08d3bb]' : position === 'bottom' ? 'bg-[#9208d3]' : 'bg-[#0f88c0]'} `}
+          className={`rounded-full p-3 ${type === 'mobile' ? 'bg-[#08d3bb]' : type === 'vr' ? 'bg-[#9208d3]' : 'bg-[#0f88c0]'} `}
         >
           <Image src={Happy} alt="ball icon" />
         </div>

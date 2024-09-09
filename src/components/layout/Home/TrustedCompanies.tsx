@@ -11,7 +11,7 @@ import Image from 'next/image'
 import { logos } from '@/lib/dummyData'
 import LogoEllipse from '../../../../public/logoEllipse.png'
 
-export function TrustedCompanies() {
+export function TrustedCompanies({data}:any) {
   return (
     <div className="relative">
       <div className="px-[4%] text-center mb-40">
