@@ -14,14 +14,14 @@ function MenuSections({ item }: any) {
             {section.heading?.toUpperCase()}
           </h1>
 
-          {section.links?.map((link: any) => (
+          {section?.links?.map((link: any) => (
             <div
               key={link.id}
               className="px-3 flex items-center rounded-lg hover:bg-[#f6f6ff] gap-4 mb-2 cursor-pointer group"
             >
               {link?.icon?.data?.attributes?.url ? (
                 <Image
-                src={`http://localhost:1337${link.icon.data.attributes.url}`}
+                src={`http://localhost:1337${link?.icon?.data?.attributes?.url}`}
                 alt={`${link.name} icon`}
                 width={80} // Set the width or height, depending on your layout needs
                 height={80} // Adjust height based on the original ratio, or leave it blank

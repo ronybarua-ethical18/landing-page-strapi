@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import React from 'react'
 import Line from '../../../../public/line.png'
@@ -36,7 +38,7 @@ function Features({ data }: any) {
         {isImageRight ? (
           <>
             <div className="w-full z-50">
-              <BallWithContent type={feature.type} />
+              <BallWithContent type={feature.type} icon={feature?.icon} />
             </div>
             <div className="w-full flex justify-end">
                 <Image
@@ -57,11 +59,11 @@ function Features({ data }: any) {
                   width={imageWidth}  
                   height={imageHeight} 
                   layout="intrinsic"
-                  style={{zIndex:9999}}
+                  className='z-50'
                 />
             </div>
             <div className="w-[75%] z-50 flex items-center h-full">
-              <BallWithContent type={feature.type} />
+              <BallWithContent type={feature.type} icon={feature.icon} />
             </div>
           </>
         )}

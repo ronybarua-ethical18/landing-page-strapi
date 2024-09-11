@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import * as React from 'react'
 import Autoplay from 'embla-carousel-autoplay'
@@ -8,7 +8,6 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel'
 import Image from 'next/image'
-import LogoEllipse from '../../../../public/logoEllipse.png'
 
 export function TrustedCompanies({ data }: any) {
   return (
@@ -35,7 +34,7 @@ export function TrustedCompanies({ data }: any) {
               >
                 <div className="text-center flex items-center justify-center z-50">
                   <Image
-                    src={`http://localhost:1337${item?.logo?.data.attributes.url}`}
+                    src={`http://localhost:1337${item?.logo?.data?.attributes?.url}`}
                     alt="vector user image"
                     className="z-50"
                     width={item?.logo?.data.attributes.width}
@@ -50,11 +49,11 @@ export function TrustedCompanies({ data }: any) {
       </div>
       <div className="absolute left-0 top-[-70px]">
         <Image
-          src={`http://localhost:1337${data?.bgImg?.data.attributes.url}`}
+          src={`http://localhost:1337${data?.bgImg?.data?.attributes?.url}`}
           alt="vector user image"
           className="z-50"
-          width={data?.bgImg?.data.attributes.width}
-          height={data?.bgImg?.data.attributes.height}
+          width={data?.bgImg?.data?.attributes?.width}
+          height={data?.bgImg?.data?.attributes?.height}
           layout="intrinsic"
         />
       </div>

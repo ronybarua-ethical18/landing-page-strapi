@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import React from 'react'
 import { Separator } from '@/components/ui/separator'
@@ -40,9 +42,9 @@ function Services({ data }: any) {
             <div key={service.id} className="flex gap-4 items-center">
               {IconWithBG(
                 service.bgType,
-                service.icon?.data?.attributes?.url,
-                service.icon?.data?.attributes?.width,
-                service.icon?.data?.attributes?.height,
+                service?.icon?.data?.attributes?.url,
+                service?.icon?.data?.attributes?.width,
+                service?.icon?.data?.attributes?.height,
               )}
               <div>
                 <h1 className="text-lg font-semibold">{service.title}</h1>

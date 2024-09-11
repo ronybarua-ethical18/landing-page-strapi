@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import React from 'react'
 import Bell from '../../../../public/bell.png'
@@ -22,13 +24,13 @@ function FeatureCategories({ data }: any) {
           <div className="absolute top-[-18%] right-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             <Image
               src={
-                `http://localhost:1337${category?.icon?.data.attributes.url}` ||
+                `http://localhost:1337${category?.icon?.data?.attributes?.url}` ||
                 Bell
               }
               alt="vector user image"
               className="z-50"
-              width={category?.icon?.data.attributes.width}
-              height={category?.icon?.data.attributes.height}
+              width={category?.icon?.data?.attributes?.width}
+              height={category?.icon?.data?.attributes?.height}
               layout="intrinsic"
             />
           </div>

@@ -24,9 +24,9 @@ export default function TopBar({ strapiMenuData }: any) {
   }
 
   // Extract sections by type
-  const logoSection = strapiMenuData?.MainMenuItems.find((item:any) => item.__component === 'menu.logo-section')
-  const dropdownOrMenuLinks = strapiMenuData?.MainMenuItems.filter((item:any) => item.__component === 'menu.dropdown' || item.__component === 'menu.menu-link')
-  const menuButtons = strapiMenuData?.MainMenuItems.filter((item:any) => item.__component === 'menu.menu-button')
+  const logoSection = strapiMenuData?.MainMenuItems?.find((item:any) => item.__component === 'menu.logo-section')
+  const dropdownOrMenuLinks = strapiMenuData?.MainMenuItems?.filter((item:any) => item.__component === 'menu.dropdown' || item.__component === 'menu.menu-link')
+  const menuButtons = strapiMenuData?.MainMenuItems?.filter((item:any) => item.__component === 'menu.menu-button')
 
   return (
     <>
@@ -41,12 +41,12 @@ export default function TopBar({ strapiMenuData }: any) {
               </Link>
             </div>
           )}
-          {dropdownOrMenuLinks.length > 0 && (
+          {dropdownOrMenuLinks?.length > 0 && (
             <div
               className={`nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 ${menuOpen ? 'top-[9%]' : 'top-[-100%]'} md:w-auto w-full flex items-center px-5`}
             >
               <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
-                {dropdownOrMenuLinks.map((item: any) => (
+                {dropdownOrMenuLinks?.map((item: any) => (
                   <li
                     className="relative flex items-center gap-3 cursor-pointer"
                     key={item.title}
@@ -56,12 +56,12 @@ export default function TopBar({ strapiMenuData }: any) {
                     <Link href={item.url ? item.url : '/'}>
                       <div className="relative flex items-center">
                         {/* Active green dot */}
-                        {pathname === item.link && (
+                        {item?.url?.includes(pathname) && (
                           <span className="absolute top-[-3px] left-[-10px] w-2 h-2 bg-green-500 rounded-full"></span>
                         )}
 
                         <span
-                          className={`hover:text-[#4b47ff] ${pathname === item.link ? 'text-[#4b47ff] font-medium' : ''}`}
+                          className={`hover:text-[#4b47ff] ${item?.url?.includes(pathname) ? 'text-[#4b47ff] font-medium' : ''}`}
                         >
                           {item.title}
                         </span>
@@ -77,9 +77,9 @@ export default function TopBar({ strapiMenuData }: any) {
               </ul>
             </div>
           )}
-          {menuButtons.length > 0 && (
+          {menuButtons?.length > 0 && (
             <div className="flex items-center gap-6">
-              {menuButtons.map((button: any) => (
+              {menuButtons?.map((button: any) => (
                 <Link href={button.link ? button.link : '/'} key={button.id}>
                   <Button
                     variant={button.type}

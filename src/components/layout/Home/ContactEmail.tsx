@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -24,21 +26,21 @@ function ContactEmail({ data }: any) {
       </div>
       <div className="absolute right-1/3 top-[10%]">
         <Image
-          src={`http://localhost:1337${data?.rightIcon?.data.attributes.url}`}
+          src={`http://localhost:1337${data?.rightIcon?.data?.attributes?.url}`}
           alt="vector user image"
           className="z-50"
-          width={data?.rightIcon?.data.attributes.width}
-          height={data?.rightIcon?.data.attributes.height}
+          width={data?.rightIcon?.data?.attributes?.width}
+          height={data?.rightIcon?.data?.attributes?.height}
           layout="intrinsic"
         />
       </div>
       <div className="absolute left-[10%] top-[-45px]">
         <Image
-          src={`http://localhost:1337${data?.leftIcon?.data.attributes.url}`}
+          src={`http://localhost:1337${data?.leftIcon?.data?.attributes?.url}`}
           alt="vector user image"
           className="z-50"
-          width={data?.leftIcon?.data.attributes.width}
-          height={data?.leftIcon?.data.attributes.height}
+          width={data?.leftIcon?.data?.attributes?.width}
+          height={data?.leftIcon?.data?.attributes?.height}
           layout="intrinsic"
         />
       </div>
