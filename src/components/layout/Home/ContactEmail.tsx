@@ -19,7 +19,7 @@ function ContactEmail({ data }: any) {
           type="submit"
           className="h-14"
           size="lg"
-          variant={data?.subscribeBtn.type}
+          variant={data?.subscribeBtn?.type}
         >
           {data?.subscribeBtn?.title}
         </Button>

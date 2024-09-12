@@ -17,36 +17,41 @@ export const IconWithBG = (id: number, icon: any) => {
   
     return (
       <div className={`rounded-2xl p-4  ${bgColor}`}>
-        <Image src={icon} alt="icon" />
+       <Image
+          src={`http://localhost:1337${icon?.data?.attributes?.url}`}
+          alt="vector user image"
+          className="z-50"
+          width={icon?.data?.attributes?.width}
+          height={icon?.data?.attributes?.height}
+          layout="intrinsic"
+        />
       </div>
     )
   }
 
-function ServicesWithTitle() {
+function ServicesWithTitle({data}:any) {
   return (
     <div className=" grid grid-cols-2 mb-20">
       <div className="pl-[20%]">
         <div className="bg-[#4628A4] p-1 w-[100px] mb-10"></div>
         <h1 className="text-3xl leading-relaxed font-semibold">
-          Lorem Ipsum is simply dummy <br /> text of the printing.{' '}
+          {data?.title}
         </h1>
         <p className="leading-loose w-[60%] my-10">
-          KODEX TECHNOLOGY (PVT) LTD is a team of experienced mobile and web
-          applications and website builders measuring dozens of completed
-          projects.
+          {data?.description}
         </p>
-        <Button variant="white" className='border-[#1090CB]' size="lg">Contact us</Button>
+        <Button variant={data?.button?.type} className='border-[#1090CB]' size="lg">{data?.button?.title}</Button>
       </div>
       <div
         className="py-10 px-16"
         style={{ boxShadow: 'rgba(0, 0, 0, 0.08) 0px 4px 12px' }}
       >
         <div className="grid md:grid-cols-2 gap-6 h-full">
-        {aboutServices.map(
+        {data?.service?.map(
           (service: {
             id: number
             title: string
-            description: string
+            bgType: string
             icon: any
           }) => (
             <div key={service.id} className="flex gap-4 items-center">
