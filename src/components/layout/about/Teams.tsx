@@ -8,7 +8,6 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel'
 import Image from 'next/image'
-import { teams } from '@/lib/dummyData'
 
 export function Teams({ data }: any) {
   return (

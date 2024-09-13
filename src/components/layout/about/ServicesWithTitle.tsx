@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { aboutServices, services } from '@/lib/dummyData'
 import Image from 'next/image'
 import React from 'react'
 
