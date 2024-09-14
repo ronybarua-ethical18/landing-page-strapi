@@ -5,18 +5,22 @@ import { getStrapiData } from '@/lib/utils'
 import React from 'react'
 
 async function ContactPage() {
-  const [mainMenuData, footerData] = (await getStrapiData([
+  const [mainMenuData, contactData, footerData] = (await getStrapiData([
     '/api/main-menu',
+    '/api/contact-page',
     '/api/footer',
-  ])) as [any, any]
+  ])) as [any, any, any]
 
   const strapiMenuData = mainMenuData?.data?.attributes
   const footer = footerData?.data?.attributes?.Footer
+  const contact = contactData?.data?.attributes?.contactPage
+
+
   return (
     <main className="w-full grid place-items-center">
       <div className="max-w-[2100px]">
         <TopBar strapiMenuData={strapiMenuData} />
-        <Contact />
+        <Contact data={contact}/>
         <Footer footer={footer} />
       </div>
     </main>

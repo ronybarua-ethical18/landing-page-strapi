@@ -13,7 +13,9 @@ export default function TopBar({ strapiMenuData }: any) {
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null)
 
   const handleMouseEnter = (title: string) => {
-    const menuItem = strapiMenuData?.MainMenuItems.find((item:any) => item.title === title)
+    const menuItem = strapiMenuData?.MainMenuItems.find(
+      (item: any) => item.title === title,
+    )
     if (menuItem && menuItem?.sections?.data?.length > 0) {
       setHoveredMenu(title)
     }
@@ -24,20 +26,29 @@ export default function TopBar({ strapiMenuData }: any) {
   }
 
   // Extract sections by type
-  const logoSection = strapiMenuData?.MainMenuItems?.find((item:any) => item.__component === 'menu.logo-section')
-  const dropdownOrMenuLinks = strapiMenuData?.MainMenuItems?.filter((item:any) => item.__component === 'menu.dropdown' || item.__component === 'menu.menu-link')
-  const menuButtons = strapiMenuData?.MainMenuItems?.filter((item:any) => item.__component === 'menu.menu-button')
+  const logoSection = strapiMenuData?.MainMenuItems?.find(
+    (item: any) => item.__component === 'menu.logo-section',
+  )
+  const dropdownOrMenuLinks = strapiMenuData?.MainMenuItems?.filter(
+    (item: any) =>
+      item.__component === 'menu.dropdown' ||
+      item.__component === 'menu.menu-link',
+  )
+  const menuButtons = strapiMenuData?.MainMenuItems?.filter(
+    (item: any) => item.__component === 'menu.menu-button',
+  )
+
+
+  console.log("pathname", pathname)
 
   return (
-    <>
+    <div className='max-w-[2100px]'>
       <nav className="w-full sticky top-0 bg-white" style={{ zIndex: 9999 }}>
         <div className="flex justify-between items-center md:px-[10%] sm:px-[5%]">
           {logoSection && (
             <div>
               <Link href={'/'} className="hover:text-[#4b47ff]">
-                <h1 className="font-bold text-2xl my-4">
-                  {logoSection.title}
-                </h1>
+                <h1 className="font-bold text-2xl my-4">{logoSection.title}</h1>
               </Link>
             </div>
           )}
@@ -56,12 +67,12 @@ export default function TopBar({ strapiMenuData }: any) {
                     <Link href={item.url ? item.url : '/'}>
                       <div className="relative flex items-center">
                         {/* Active green dot */}
-                        {item?.url?.includes(pathname) && (
+                        {item?.url?.includes(pathname) && pathname !== "/" && (
                           <span className="absolute top-[-3px] left-[-10px] w-2 h-2 bg-green-500 rounded-full"></span>
                         )}
 
                         <span
-                          className={`hover:text-[#4b47ff] ${item?.url?.includes(pathname) ? 'text-[#4b47ff] font-medium' : ''}`}
+                          className={`hover:text-[#4b47ff] ${item?.url?.includes(pathname) && pathname !== "/" ? 'text-[#4b47ff] font-medium' : ''}`}
                         >
                           {item.title}
                         </span>
@@ -80,10 +91,10 @@ export default function TopBar({ strapiMenuData }: any) {
           {menuButtons?.length > 0 && (
             <div className="flex items-center gap-6">
               {menuButtons?.map((button: any) => (
-                <Link href={button.link ? button.link : '/'} key={button.id}>
+                <Link href={button.url ? button.url : '/'} key={button.id}>
                   <Button
                     variant={button.type}
-                    className={`hover:bg-[#1090CB] hover:text-white ${button.type ==="white" ?"border-[#1090cb] hover:bg-white hover:text-[#1090cb]":""}`}
+                    className={`hover:bg-[#1090CB] hover:text-white ${button.type === 'white' ? 'border-[#1090cb] hover:bg-white hover:text-[#1090cb]' : ''}`}
                   >
                     {button.title}
                   </Button>
@@ -106,10 +117,13 @@ export default function TopBar({ strapiMenuData }: any) {
         onMouseLeave={handleMouseLeave}
       >
         {hoveredMenu &&
-          strapiMenuData?.MainMenuItems
-            .filter((item:any) => item.title === hoveredMenu && item?.sections?.data?.length > 0)
-            .map((item:any) => <MenuSections key={item.title} item={item?.sections?.data} />)}
+          strapiMenuData?.MainMenuItems.filter(
+            (item: any) =>
+              item.title === hoveredMenu && item?.sections?.data?.length > 0,
+          ).map((item: any) => (
+            <MenuSections key={item.title} item={item?.sections?.data} />
+          ))}
       </div>
-    </>
+    </div>
   )
 }
