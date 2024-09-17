@@ -7,7 +7,10 @@ export function cn(...inputs: ClassValue[]) {
 
 export async function getStrapiData(paths: string[]) {
   try {
-    const baseUrl = 'http://localhost:1337'
+    const baseUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL
+    if (!baseUrl) {
+      throw new Error('NEXT_PUBLIC_STRAPI_API_URL is not defined')
+    }
     const fetchPromises = paths.map(path =>
       fetch(baseUrl + path).then(response => response.json()),
     )
